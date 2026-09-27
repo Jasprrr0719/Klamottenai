@@ -1,8 +1,13 @@
 # example netlify.toml
 [build]
-  command = "npm run build"
+  command = "npm run build --prefix outfit-generator"
+  publish = "outfit-generator/dist"
   functions = "netlify/functions"
-  publish = "dist"
+
+[dev]
+  command = "npm run dev --prefix outfit-generator"
+  targetPort = 5173
+  publish = "outfit-generator/dist"
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
